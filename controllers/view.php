@@ -65,8 +65,8 @@ class View {
         endforeach;
     }
 
-    public function render_part($name) {
-        include __DIR__ . "/../templates/template_parts/{$name}/index.php";
+    public function render_part($name, $args = []) {
+        include __DIR__ . "/../templates/template_parts/{$name}.php";
     }
 
     public function render() {

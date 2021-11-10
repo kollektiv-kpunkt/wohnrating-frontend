@@ -3,6 +3,9 @@
     --white: #f6f6f6;
     --accent: #963030;
     --grey: #9b9b9b;
+
+    --dark : #112B8A;
+    --light : #D1ECFF;
 }
 
 html {

@@ -26,7 +26,5 @@ Router::get('/', function() {
         "rating/index",
         false
     );
-    $view->add_style("style/ellow.css");
-    $view->add_script("style/ellow.js", false);
     $view->render();
 });

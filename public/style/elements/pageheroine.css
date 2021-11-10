@@ -1,0 +1,43 @@
+#page-heroine {
+    background-color: var(--light);
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Hamburger Menu */
+#navbar #nav-menubutton {
+    margin: auto 0;
+    display: flex;
+    cursor: pointer;
+}
+
+#navbar #nav-menubutton span {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 2rem;
+    margin-left: 0.5rem;
+    font-weight: 900;
+}
+
+#navbar #nav-menubutton #menu-tofuburger {
+    width: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+}
+
+#navbar #nav-menubutton #menu-tofuburger div {
+    height: 4.5px;
+    margin: 2px 0;
+    background-color: var(--dark);
+    transition: 0.25s cubic-bezier(0.165, 0.84, 0.44, 1) transform;
+}
+
+#navbar #nav-menubutton.open #menu-tofuburger div:nth-child(1) {transform: translateY(8px) rotate(45deg);}
+#navbar #nav-menubutton.open #menu-tofuburger div:nth-child(2) {transform: rotate(-45deg);}
+#navbar #nav-menubutton.open #menu-tofuburger div:nth-child(3) {transform: translateY(-8px) rotate(45deg);}
