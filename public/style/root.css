@@ -1,0 +1,10 @@
+:root {
+    --black: #000000;
+    --white: #f6f6f6;
+    --accent: #963030;
+    --grey: #9b9b9b;
+}
+
+html {
+    background-color: var(--white);
+}
