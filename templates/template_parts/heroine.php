@@ -4,9 +4,9 @@
         $this->render_part("nav");
         ?>
     </div>
-    <div class="smcont" id="intro-container">
+    <div class="smcont fcdark" id="intro-container">
         <?php
-        $this->render_part("intro", $args["intro"]);
+        $this->render_part("intro");
         ?>
     </div>
 </div>

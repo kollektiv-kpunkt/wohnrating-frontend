@@ -26,5 +26,8 @@ Router::get('/', function() {
         "rating/index",
         false
     );
+    $view->add_style("/style/pages/home.css");
+    $view->add_style("/style/elements/secnav.css");
+    $view->add_style("/style/elements/cta.css");
     $view->render();
 });

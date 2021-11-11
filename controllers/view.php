@@ -11,6 +11,7 @@ class View {
     public $header = __DIR__ . "/../templates/partials/header.php";
     public $footer = __DIR__ . "/../templates/partials/footer.php";
     public $body;
+    public $content;
 
     public function __construct($subtitle, $body, $title = true) {
         $this->subtitle = $subtitle;

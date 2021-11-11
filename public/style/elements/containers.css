@@ -1,9 +1,26 @@
 .lgcont {
+    width: 90%;
     max-width: 1540px;
     margin: auto;
 }
 
 .smcont {
+    width: 90%;
     max-width: 793px;
     margin: auto;
+}
+
+.columns3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.columns3 .column {
+    width: calc((100% / 3) - (2.5rem * 2 / 3));
+    margin-right: 2.5rem;
+}
+
+.columns3 .column:last-child {
+    margin-right: 0;
 }

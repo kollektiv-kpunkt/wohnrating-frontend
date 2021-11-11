@@ -5,9 +5,11 @@
     --grey: #9b9b9b;
 
     --dark : #112B8A;
-    --light : #D1ECFF;
+    --light : #e6f5ff;
 }
 
 html {
     background-color: var(--white);
 }
+
+img {max-width: 100%;}

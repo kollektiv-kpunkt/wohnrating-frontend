@@ -7,6 +7,7 @@
     font-size: 1.2222rem;
     border: transparent;
 
+    border: 2px solid var(--btnborder);
     color: var(--btncolor);
     background-color: var(--btnbgcolor);
 
@@ -14,10 +15,16 @@
     display: inline-block;
 
     --btncolor: var(--white);
-    --btnbgcolor: var(--black);
+    --btnbgcolor: var(--dark);
+    --btnborder: transparent;
 
     transition: 0.05s linear background-color;
     cursor: pointer;
 }
 
 .button:hover, .button:focus{--btnbgcolor: var(--accent);}
+
+.button.line {
+    --btnbgcolor: transparent;
+    --btnborder: var(--white)
+}

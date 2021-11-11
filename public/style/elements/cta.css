@@ -1,0 +1,9 @@
+.cta-inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cta-inner div#cta-title, .cta-inner div#cta-content {
+    width: 50%;
+    margin: auto 0;
+}

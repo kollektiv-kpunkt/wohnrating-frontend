@@ -1,0 +1,17 @@
+#secnav-container {display: flex;}
+
+#secnav-inner {
+    margin: auto;
+    display: grid;
+    column-gap: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#secnav-inner .button {
+    border: 1px solid var(--white);
+}
+
+#secnav-inner .button.current {
+    background-color: var(--white);
+    color: var(--dark);
+}

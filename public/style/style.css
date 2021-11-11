@@ -1,10 +1,15 @@
 @import url("normalize.css");
 @import url("root.css");
 
+@import url("typo/typography.css");
+
+@import url("elements/elements.css");
+
 @import url("classes/margins.css");
 @import url("classes/paddings.css");
 
-@import url("typo/typography.css");
+@import url("classes/fontsizes.css");
+@import url("classes/fontcolors.css");
+@import url("classes/fontweights.css");
 
-
-@import url("elements/elements.css");
+@import url("classes/bgcolors.css");
