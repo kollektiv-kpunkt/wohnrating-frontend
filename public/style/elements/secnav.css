@@ -8,7 +8,7 @@
 }
 
 #secnav-inner .button {
-    border: 1px solid var(--white);
+    border: 2px solid var(--white);
 }
 
 #secnav-inner .button.current {
