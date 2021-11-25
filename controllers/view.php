@@ -1,5 +1,4 @@
 <?php
-global $conn;
 require __DIR__ . "/../config/config.inc.php";
 require_once __DIR__ . "/../functions.php";
 
