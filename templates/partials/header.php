@@ -16,6 +16,8 @@
     <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#f6f6f6">
 
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    
     <link rel="stylesheet" href="/style/style.css">
 
     <script src="/lib/jquery.min.js"></script>

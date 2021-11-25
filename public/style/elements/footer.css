@@ -1,0 +1,41 @@
+#footer-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+#some-content, #logo-content {
+    display: flex;
+    margin: auto 0;
+}
+
+#some-content .some-button {
+    background-color: var(--white);
+    padding: 0.75rem;
+    border-radius: 100%;
+    margin-right: 0.5rem;
+    height: fit-content;
+}
+
+#some-content .some-button:last-child {
+    margin-right: 0;
+}
+
+#some-content .some-button a {
+    color: var(--dark);
+    line-height: 0.8;
+    display: flex;
+    text-decoration: none;
+    font-size: 1.25rem;
+    height: 1.25rem;
+    width: 1.25rem;
+    text-align: center;
+    justify-content: center;
+}
+
+#logo-content img {
+    max-height: 40px;
+    width: auto;
+    margin-right: 1rem;
+}
+
+#logo-content img:last-child {margin-right: 0;}

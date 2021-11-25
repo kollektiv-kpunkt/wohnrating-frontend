@@ -57,3 +57,7 @@ $this->render_part("cta");
         </div>
     </div>
 </div>
+
+<?php
+$this->render_part("footer");
+?>
