@@ -1,3 +1,6 @@
+<?php
+$this->add_script("/js/elements/secnav.js", false);
+?>
 <div id="secnav-container" class="bgdark pt3 pb3">
     <div id="secnav-inner">
         <a href="/" class="button bgtrans<?php ($_SERVER["REQUEST_URI"] == "/") ? print(" current") : "" ?>">Darum gehts</a>

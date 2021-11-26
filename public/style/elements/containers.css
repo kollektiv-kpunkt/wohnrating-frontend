@@ -13,12 +13,42 @@
 .columns3 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
 }
 
 .columns3 .column {
     width: calc((100% / 3) - (2.5rem * 2 / 3));
     margin-right: 2.5rem;
+}
+
+@media screen and (max-width: 1080px) {
+    .columns3 .column {
+        width: calc((100% / 2) - (2.5rem * 1 / 2));
+        margin-right: 0;
+    }
+    
+    .columns3 .column:first-child {
+        margin-right: 2.5rem;
+    }
+    
+    .columns3 .column:last-child:not(.placeholder) {
+        margin-top: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .columns3 .column {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .columns3 .column:first-child {
+        margin-right: 0;
+    }
+    
+    .columns3 .column:last-child:not(.placeholder) {
+        margin-top: 0;
+    }
 }
 
 .columns3 .column:last-child {

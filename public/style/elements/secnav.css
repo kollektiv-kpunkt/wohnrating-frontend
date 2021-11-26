@@ -15,3 +15,49 @@
     background-color: var(--white);
     color: var(--dark);
 }
+
+@media screen and (max-width: 680px) {
+    #secnav-inner {
+        margin: auto;
+        display: flex;
+        width: 100%;
+        position: relative;
+    }
+
+    #secnav-inner .button:not(.current) {
+        display: none;
+    }
+    
+    #secnav-inner .button {
+        width: 90%;
+        max-width: 500px;
+        margin: auto;
+        position: relative;
+    }
+    
+    #secnav-inner .button.current::after {
+        font-family: FontAwesome;
+        display: flex;
+        content: "\f078";
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        right: 0.5rem;
+        transform: translateY(-50%);
+        line-height: 0.8;
+    }
+    
+    #secnav-inner.open .button.current::after {
+        content: "\f077";
+    }
+
+    #secnav-inner.open .button:not(.current) {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--dark);
+        z-index: 10;
+    }
+}

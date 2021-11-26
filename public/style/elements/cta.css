@@ -7,3 +7,28 @@
     width: 50%;
     margin: auto 0;
 }
+
+@media screen and (max-width: 1290px) {
+
+    .cta-buttons .button {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .cta-buttons .button:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .cta-inner div#cta-title, .cta-inner div#cta-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    #cta-content-inner {
+        margin-left: 0;
+        margin-top: 1.25rem;
+    }
+    
+}
