@@ -33,6 +33,16 @@ Router::get('/', function() {
     $view->render();
 });
 
+Router::get('/hintergrund', function() {
+    $view = new View(
+        "Unsere Positionen",
+        "positionen/index"
+    );
+    $view->add_style("/style/pages/positionen.css");
+    $view->add_style("/style/elements/question-break.css");
+    $view->render();
+});
+
 
 Router::get('/test/API', function() {
     header("Content-type: application/json");
@@ -42,4 +52,19 @@ Router::get('/test/API', function() {
         "page" => 1
     ];
     echo($api->get_items("Politician", $params));
+});
+
+
+Router::error(function(Pecee\Http\Request $request, \Exception $exception) {
+
+    switch($exception->getCode()) {
+        // Page not found
+        case 404:
+            echo("Folgt");
+            exit;
+        // Forbidden
+        case 403:
+            response()->redirect('/forbidden');
+    }
+    
 });
