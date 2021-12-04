@@ -33,16 +33,39 @@ Router::get('/', function() {
     $view->render();
 });
 
+Router::get('/rating', function() {
+    $view = new View(
+        "Unser Rating",
+        "rating/rating"
+    );
+    $view->add_style("/lib/select2/select2.min.css");
+    $view->add_style("/style/pages/rating.css");
+    $view->add_style("/style/elements/secnav.css");
+    $view->add_style("/style/elements/kandigrid.css");
+    $view->add_script("/js/elements/kandigrid.js", false);
+    $view->render();
+});
+
 Router::get('/hintergrund', function() {
     $view = new View(
         "Unsere Positionen",
         "positionen/index"
     );
+    $view->add_style("/style/elements/secnav.css");
     $view->add_style("/style/pages/positionen.css");
     $view->add_style("/style/elements/question-break.css");
     $view->render();
 });
 
+
+Router::get('/shareimg', function() {
+    $view = new View(
+        "Share",
+        "elements/shareimg"
+    );
+    $view->add_style("/style/elements/testimonial.css");
+    $view->render();
+});
 
 Router::get('/test/API', function() {
     header("Content-type: application/json");
@@ -67,4 +90,11 @@ Router::error(function(Pecee\Http\Request $request, \Exception $exception) {
             response()->redirect('/forbidden');
     }
     
+});
+
+
+/* Interfaces */
+
+Router::get('/interface/kandigrid/{gemeinde}/{organ}/{sort}', function($gemeinde, $organ, $sort) {
+    include __DIR__ . "/../interfaces/kandigrid.php";
 });

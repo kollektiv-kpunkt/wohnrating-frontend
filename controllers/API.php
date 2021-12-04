@@ -46,7 +46,13 @@ class API {
 
         curl_setopt($this->ch, CURLOPT_URL, $url);
 
-        return json_decode(curl_exec($this->ch))->data;
+        $response = json_decode(curl_exec($this->ch));
+        if (isset($response->errors)) {
+            return $response;
+        } else {
+            return $response->data;
+        }
+
     }
 
     public function post_item($collection, $payload) {

@@ -1,0 +1,257 @@
+#kandigrid-container.show {
+    margin-top: 2rem;
+}
+
+#kandigrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 1.5rem;
+    --numcol: 5;
+}
+
+@media screen and (max-width: 1180px) {
+    #kandigrid {
+        --numcol: 4;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    #kandigrid {
+        --numcol: 3;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #kandigrid {
+        --numcol: 2;
+    }
+}
+
+
+#kandigrid .kandi {
+    width: calc((100% / var(--numcol) - (1.5rem * (var(--numcol) - 1) / var(--numcol))));
+    transition: 0.125s linear opacity;
+}
+
+#kandigrid .kandi .kandi-teaser {
+    position: relative;
+    display: flex;
+    padding-bottom: 100%;
+    cursor: pointer;
+}
+
+svg.percentage-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+svg.percentage-ring path.arc {
+    fill: none;
+    stroke: hsl(var(--hue), 100%, 50%);
+    stroke-width: 4
+}
+
+#kandigrid .kandi img {
+    border-radius: 100%;
+    width: 99.5%;
+    height: 99.5%;
+    position: absolute;
+    top: 0.25%;
+    left: 0.25%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#kandigrid .kandi .kandi-teaser-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    mix-blend-mode: saturation;
+    z-index: 2;
+    opacity: 1;
+    transition: 0.25s linear opacity;
+    border-radius: 100%;
+}
+
+#kandigrid .kandi.open .kandi-teaser-overlay {
+    opacity: 0;
+}
+
+#kandigrid.kandiopen .kandi {
+    opacity: 0.2;
+}
+
+#kandigrid.kandiopen .kandi.open {
+    opacity: 1;
+}
+
+/* Infos Container */
+.kandi-moreinfo-container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s ease-in-out max-height;
+    z-index: 100;
+}
+
+.kandi-info-name {
+    max-width: 90%;
+    line-height: 0.9;
+}
+
+.kandi-info-details::after {
+    font-family: "FontAwesome";
+    font-weight: 900;
+    content: "\f14d";
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.kandi-info-quote {
+    font-family: serif;
+    font-style: italic;
+}
+
+.kandi-info-rating-questions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 2.5rem;
+    --numcol: 3;
+}
+
+@media screen and (max-width: 1280px) {
+    .kandi-info-rating-questions {
+        --numcol: 2;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .kandi-info-rating-questions {
+        --numcol: 1;
+        max-width: 380px;
+    }
+}
+
+.kandi-info-rating-questions .question {
+    width: calc((100% / var(--numcol) - (2.5rem * (var(--numcol) - 1) / var(--numcol))));
+}
+
+.kandi-info-rating-questions .question .question-answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 0.5rem;
+}
+
+.kandi-info-rating-questions .question .question-answers .answer {
+    --border-color: var(--white);
+    --background-color: transparent;
+}
+
+.kandi-info-rating-questions .question .question-answers .answer.correct {
+    --border-color: lightgreen;
+}
+
+.kandi-info-rating-questions .question .question-answers .answer.selected {
+    --background-color: red;
+}
+
+.kandi-info-rating-questions .question .question-answers .answer.correct.selected {
+    --background-color: lightgreen;
+}
+
+.kandi-info-rating-questions .question .question-answers .answer .answer-label {
+    display: block;
+    text-align:  center;
+    margin-bottom: 0.5rem;
+}
+
+.kandi-info-rating-questions .question .question-answers .answer .answer-block {
+    height: 1rem;
+    width: 1rem;
+    margin: auto;
+    border: 3px solid var(--border-color);
+    background-color: var(--background-color);
+    border-radius: 4px;
+}
+
+.kandi-info-close {
+    font-size: 2rem;
+    position: absolute;
+    top: min(2rem, 5vw);
+    right: 5vw;
+    cursor: pointer;
+}
+
+.kandi-moreinfo-placeholder {
+    transition: 0.5s ease-in-out padding-bottom;
+}
+
+/* Filters */
+#kandigrid-filters {
+    display: flex;
+    gap: 3rem
+}
+
+@media only screen and (max-width: 580px) {
+    #kandigrid-filters {
+        display: block;
+        gap: 3rem
+    }
+
+    #kandigrid-filters #sorting-filters {
+        margin-bottom: 1.5rem;
+    }
+
+    #kandigrid-filters .kandigrid-filter {
+        width: 50%;
+        max-width: 200px;
+    }
+}
+
+#kandigrid-filters #sorting-filters, #kandigrid-filters #organ-filters {
+    display: flex;
+    gap: 1.5rem
+}
+
+#kandigrid-filters .kandigrid-filter {
+    padding: 0 0.5rem 0.25rem;
+    color: var(--filter-color);
+    border-bottom: 2px solid var(--filter-border-color);
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    
+    --filter-color: var(--grey);
+    --filter-border-color: var(--grey)
+}
+
+#kandigrid-filters .kandigrid-filter.active {
+    --filter-color: var(--black);
+    --filter-border-color: var(--dark)
+}
+
+#kandigrid-filters .kandigrid-filter.sorting-filter::before {
+    font-family: "FontAwesome";
+    font-weight: 900;
+    content: "\f062";
+    margin-right: 0.5rem;
+}
+
+#kandigrid-filters .kandigrid-filter.sorting-filter[data-direction="down"]::before {
+    font-family: "FontAwesome";
+    font-weight: 900;
+    content: "\f063";
+    margin-right: 0.5rem;
+}

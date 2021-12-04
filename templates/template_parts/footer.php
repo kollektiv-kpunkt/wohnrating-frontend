@@ -1,6 +1,6 @@
 <footer class="mt10 bgdark">
     <div id="footer-container" class="pt8 pb8 lgcont">
-        <div class="fcwhite columns3 mb7" id="footer-content">
+        <div class="fcwhite columns3 mb4" id="footer-content">
             <div class="column">
                 <h3 class="mt0">Kontakt</h3>
                 <p><b>Wohnbaugenossenschaften Schweiz Regionalverband Zürich</b><br>
@@ -10,21 +10,27 @@
                 <p><a href="mailto:info@wbg-zh.ch" class="fcwhite">info@wbg-zh.ch</a></p>
             </div>
             <div class="column">
-                <h3 class="mt0">Spendenkonto</h3>
-                <p><b>Komitee “Ja zum Zürcher Energiegesetz”</b><br>
-                c/o WWF Zürich<br>
-                Hohlstrasse 110<br>
-                8010 Zürich<br>
-                IBAN: CH35 0900 0000 8004 3080 9</p>
+                <p class="mt7"><b>Wohnbaugenossenschaften Schweiz Regionalverband Winterthur</b><br>
+                Technikumstrasse 81<br>
+                8400 Winterthur</p>
+                <p>052 242 60 06</p>
+                <p><a href="mailto:info@wbg-zh.ch" class="fcwhite">info@wbg-zh.ch</a></p>
             </div>
             <div class="column">
-                <h3 class="mt0">Weitere Infos</h3>
-                <a href="#" class="fcwhite mb2" style="display: block">WBH ZH</a>
-                <a href="#" class="fcwhite mb2" style="display: block">MV ZH</a>
-                <a href="#" class="fcwhite mb2" style="display: block">Über die Kampagne</a>
-                <a href="#" class="fcwhite mb2" style="display: block">Positionen</a>
-                <a href="#" class="fcwhite" style="display: block">Medien</a>
+                <p class="mt7"><b>Mieterinnen- und Mieterverband Zürich</b><br>
+                Tellstrasse 31, Postfach 1817<br>
+                8021 Zürich</p>
+                <p>044 296 90 20</p>
+                <p><a href="mailto:info@wbg-zh.ch" class="fcwhite">info@wbg-zh.ch</a></p>
             </div>
+        </div>
+        <div class="mb7">
+            <h3 class="fcwhite">Weitere Infos</h3>
+            <a href="#" class="fcwhite mb2" style="display: block">WBH ZH</a>
+            <a href="#" class="fcwhite mb2" style="display: block">MV ZH</a>
+            <a href="#" class="fcwhite mb2" style="display: block">Über die Kampagne</a>
+            <a href="#" class="fcwhite mb2" style="display: block">Positionen</a>
+            <a href="#" class="fcwhite" style="display: block">Medien</a>
         </div>
         <div id="footer-bottom">
             <div id="some-content">

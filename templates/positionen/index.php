@@ -6,6 +6,7 @@ $this->content = array(
     ]
 );
 $this->render_part("heroine");
+$this->render_part("secnav");
 ?>
 
 <div class="columns3 mt9 lgcont">

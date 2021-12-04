@@ -1,0 +1,50 @@
+.select2-container--default .select2-selection--single {
+    border: 2px solid var(--black);
+    border-radius: 0;
+    width: 300px;
+    max-width: 90vw;
+    position: relative;
+    height: 2.5rem;
+    background-color: transparent;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: calc(2.5rem - 4px);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(--black);
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    display: none;
+}
+
+.select2-container--default .select2-selection--single::after {
+    font-family: FontAwesome;
+    display: flex;
+    content: "\f002";
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    line-height: 0.8;
+}
+
+.select2-selection__arrow {
+    display: none;
+}
+
+#wahlkreise-container {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+}
+
+@media screen and (max-width: 980px) {
+    #wahlkreise-container {
+        margin-top: 2rem;
+    }
+}

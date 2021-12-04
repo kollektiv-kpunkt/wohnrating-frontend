@@ -1,8 +1,8 @@
 <?php
 $this->content = array(
     "intro" => [
-        "title" => "Unser Rating",
-        "lead" => "Wir haben die Kandidat:innen für die Kommunalwahlen nach ihren Meinungen zum Thema Wohn- und Bodenpolitik gefragt. Hier findest du die Ergebnisse."
+        "title" => "Wohnrating",
+        "lead" => "Wir haben die Kandidat:innen für die Kommunalwahlen nach ihren Meinungen zum Thema Wohn- und Bodenpolitik gefragt. Hier finden Sie die Ergebnisse."
     ]
 );
 $this->render_part("heroine");
@@ -11,8 +11,7 @@ $this->render_part("secnav");
 ?>
 
 
-<h2 class="fcdark lgcont mt9 mb3">Darum gehts</h2>
-<div class="columns3 mt3 lgcont">
+<div class="columns3 mt9 lgcont">
     <div class="column">
         <h4 class="fcdark">Die Mieten in Zürich explodieren</h4>
         <p class="mt0">Mehr als 90 % der Familien im Kanton Zürich können sich den Erwerb von Wohneigentum nicht mehr leisten. Gleichzeitig steigen die Mieten immer weiter und dies nicht nur in den Zentren. Von 2009 bis 2020 sind die Angebotsmieten im Kanton Zürich um 22,4 % gestiegen (Quelle: homegate.ch). Ein Ende dieser Entwicklung ist trotz Coronapandemie nicht in Sicht. Es ist davon auszugehen, dass der Renditedruck im Immobilienmarkt weiter zunimmt.</p>

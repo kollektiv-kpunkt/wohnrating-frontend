@@ -1,0 +1,93 @@
+#testimonial {
+    width: 800px;
+    height: 300px;
+    display: flex;
+    position: relative;
+    background-color: var(--light);
+    color: var(--dark);
+    transform: scale(2);
+    transform-origin: top left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#testi-img {
+    width: 260px;
+    height: 260px;
+    display: flex;
+    position: relative;
+}
+
+#testi-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    filter: grayscale(1);
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+svg.percentage-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+svg.percentage-ring path.arc {
+    fill: none;
+    stroke: hsl(var(--hue), 100%, 50%);
+    stroke-width: 4
+}
+
+#testi-content {
+    width: 400px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#testi-content p {
+    font-style: italic;
+    position: relative;
+}
+
+#score {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    line-height: 1;
+    font-size: 12px;
+}
+
+#score b {
+    color: hsl(var(--hue), 100%, 50%);
+}
+
+#domain {
+    position: absolute;
+    bottom: 20px;
+    left: 320px;
+    line-height: 1;
+    font-size: 12px;
+}
+
+.guillemait {
+    position: absolute;
+    opacity: 0.1;
+    z-index: 0;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 0.5;
+}
+
+.guillemait.g1 {
+    top: -20px;
+    left: -20px;
+}
