@@ -57,19 +57,26 @@ if(isset($image[0])) {
 ?>
 
 <div id="testimonial" style="--hue: <?= pow($politician->score, 3) * 120 ?>">
-    <div id="testi-img">
-        <img src="/uploads/<?= $image ?>">
-        <svg class="percentage-ring" viewBox="0 0 104 104">
-            <path class="arc" d="<?= describeArc($politician->score) ?>"/>
-        </svg>
+    <div id="testimonial-container">
+        <div id="quote-container">
+            <p id="quote" class="mt0 mb3">
+                <?= $politician->statement ?>
+                <span class="guillemait g1">«</span>
+            </p>
+        </div>
+        <div id="img-container">
+            <div id="img-inner">
+                <div id="testi-img">
+                    <img src="/uploads/<?= $image ?>">
+                    <svg class="percentage-ring" viewBox="0 0 104 104">
+                        <path class="arc" d="<?= describeArc($politician->score) ?>"/>
+                    </svg>
+                </div>
+            </div>
+            <div id="testi-content">
+                <p id="name" class="mt0"><b id="name"><?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?></b><br><?= $politician->job ?>, <?= $politician->jahrgang ?>, <?= $partei->shortname ?><br>Wohnrating-Score: <b id="score"><?= $politician->score * 100 ?>%</b></p>
+            </div>
+        </div>
+        <div id="domain">wohnrating.ch</b></div>
     </div>
-    <div id="testi-content">
-        <p id="quote" class="mt0 mb3">
-            <?= $politician->statement ?>
-            <span class="guillemait g1">«</span>
-        </p>
-        <p id="name" class="mt0"><b><?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?></b><br><?= $politician->job ?>, <?= $politician->jahrgang ?>, <?= $partei->shortname ?></p>
-    </div>
-    <div id="score">Wohnrating-Score: <b><?= $politician->score * 100 ?>%</b></div>
-    <div id="domain">wohnrating.ch</b></div>
 </div>

@@ -1,20 +1,39 @@
 #testimonial {
-    width: 800px;
-    height: 300px;
     display: flex;
+    width: 1080px;
+    height: 1080px;
     position: relative;
-    background-color: var(--light);
-    color: var(--dark);
-    transform: scale(2);
-    transform-origin: top left;
-    padding: 20px;
+    background-color: var(--dark);
+    color: var(--white);
+    box-sizing: content-box;
+    /* transform: scale(2); */
+    /* transform-origin: top left;*/
+}
+
+#testimonial-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 60px;
     box-sizing: border-box;
 }
 
-#testi-img {
-    width: 260px;
-    height: 260px;
+#img-container {
+    height: 310px;
+    width: 100%;
     display: flex;
+    transform: translateY(-20px);
+}
+
+#testi-img {
+    margin: auto;
+}
+
+#img-inner {
+    width: 310px;
+    height: 310px;
     position: relative;
 }
 
@@ -22,12 +41,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: flex;
     filter: grayscale(1);
     border-radius: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    background-color: var(--white);
 }
 
 svg.percentage-ring {
@@ -46,43 +65,44 @@ svg.percentage-ring path.arc {
 }
 
 #testi-content {
-    width: 400px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto 0 auto 40px;
+    font-size: 36px;
+    width: 610px;
 }
 
-#testi-content p {
+#testi-content b#name {
+    font-size: 54px;
+}
+
+#quote-container {
+    height: 650px;
+    display: flex;
+}
+
+p#quote {
+    margin: auto;
+    font-size: 55px;
     font-style: italic;
     position: relative;
 }
 
-#score {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    line-height: 1;
-    font-size: 12px;
-}
-
-#score b {
+b#score  {
     color: hsl(var(--hue), 100%, 50%);
 }
 
 #domain {
     position: absolute;
-    bottom: 20px;
-    left: 320px;
+    bottom: 30px;
+    right: 30px;
     line-height: 1;
-    font-size: 12px;
+    font-size: 22px;
 }
 
 .guillemait {
     position: absolute;
-    opacity: 0.1;
+    opacity: 0.15;
     z-index: 0;
-    font-size: 5rem;
+    font-size: 10rem;
     font-weight: 700;
     line-height: 0.5;
 }

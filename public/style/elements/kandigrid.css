@@ -109,13 +109,16 @@ svg.percentage-ring path.arc {
     line-height: 0.9;
 }
 
-.kandi-info-details::after {
+.kandi-info-details.shareable {
+    cursor: pointer;
+}
+
+.kandi-info-details.shareable::after {
     font-family: "FontAwesome";
     font-weight: 900;
     content: "\f14d";
     margin-left: 0.5rem;
     font-size: 1rem;
-    cursor: pointer;
 }
 
 .kandi-info-quote {

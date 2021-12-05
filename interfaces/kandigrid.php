@@ -168,7 +168,12 @@ endif;
             if(isset($image[0])) {
                 $image = $image[0];
             }
-            
+
+            if ($politician->statement !== "") {
+                $shareable = true;
+            } else {
+                $shareable = false;
+            }
     
         ?>
         <div class="kandi" style="--hue: <?= pow($politician->score, 3) * 120 ?>" id="<?= $politician->uuid ?>">
@@ -184,7 +189,7 @@ endif;
             <div class="kandi-moreinfo-container mt5 mb5 bgdark fcwhite">
                 <div class="kandi-moreinfo-inner lgcont pt7 pb7">
                     <h1 class="kandi-info-name mb5 fs5"><?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?></h1>
-                    <p class="kandi-info-details mt0 mb6"><?= $politician->job ?>, <?= $politician->jahrgang ?>, <?= $partei->shortname ?></p>
+                    <p class="kandi-info-details mt0 mb6<?php ($shareable) ? print " shareable" : print "" ?>"><?= $politician->job ?>, <?= $politician->jahrgang ?>, <?= $partei->shortname ?></p>
                     <?php
                     if ($politician->statement): 
                     ?>
