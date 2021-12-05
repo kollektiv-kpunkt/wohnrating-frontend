@@ -46,7 +46,7 @@ function describeArc($score){
     return join(" ", ["M", $start["x"], $start["y"], "A", 50, 50, 0, $largeArcFlag, 0, $end["x"], $end["y"]]);
 }
 
-$image = array_values(array_filter(scandir(__DIR__ . "/../../public/uploads"), function($file) use($politician) {
+$image = array_values(array_filter(scandir(__DIR__ . "/../../public/kandis"), function($file) use($politician) {
     return strpos($file, $politician->hash);
 }));
 
