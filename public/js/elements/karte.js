@@ -20,6 +20,7 @@ $(document).on("change", "select.select-gemeinde", function(e){
             $('html, body').animate({
                 scrollTop: $("#kandigrid-container").offset().top - 10
             });
+            window.history.pushState(0,0,`/rating?gemeinde=${selectedGemeinde}`);
         }
     })
 })

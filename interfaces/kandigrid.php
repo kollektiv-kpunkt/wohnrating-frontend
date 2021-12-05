@@ -176,7 +176,7 @@ endif;
             }
     
         ?>
-        <div class="kandi" style="--hue: <?= pow($politician->score, 3) * 120 ?>" id="<?= $politician->uuid ?>">
+        <div class="kandi" style="--hue: <?= pow($politician->score, 3.5) * 120 ?>" id="<?= $politician->uuid ?>">
             <div class="kandi-teaser">
                 <svg class="percentage-ring" viewBox="0 0 104 104">
                     <path class="arc" d="<?= describeArc($politician->score) ?>"/>

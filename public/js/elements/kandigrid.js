@@ -79,5 +79,5 @@ $(document).on("click", ".kandigrid-filter", function(){
 
 
 $(document).on("click", ".kandi-info-details.shareable", function(){
-    window.open("http://127.0.0.1:5000/pn44?url=" + window.location.protocol + "//" + window.location.hostname + "/shareimg?uuid=" + $(this).parents().eq(2).attr("ID"));
+    window.open("https://imggen.victorinus.ch/pn44/testimonial?url=" + window.location.protocol + "//" + window.location.hostname + "/shareimg?uuid=" + $(this).parents().eq(2).attr("ID"));
 })
