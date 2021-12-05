@@ -112,6 +112,15 @@ $params = [
 
 $gemeinde = $api->get_items("Gemeinde", $params)[0];
 
+switch($organ):
+    case "sr":
+        $behorde = "Stadtrat/Exekutive";
+        break;
+    case "gr":
+        $behorde = "Gemeinderat";
+        break;
+endswitch;
+
 ?>
 
 <h2 class="fcdark">Kandidat:innen in <?= $gemeinde->gde_name ?></h2>
@@ -152,7 +161,7 @@ endif;
             
             $partei = $api->get_items("Partei", $params)[0];
     
-            $image = array_values(array_filter(scandir(__DIR__ . "/../public/uploads"), function($file) use($politician) {
+            $image = array_values(array_filter(scandir(__DIR__ . "/../public/kandis"), function($file) use($politician) {
                 return strpos($file, $politician->hash);
             }));
     
@@ -167,7 +176,7 @@ endif;
                 <svg class="percentage-ring" viewBox="0 0 104 104">
                     <path class="arc" d="<?= describeArc($politician->score) ?>"/>
                 </svg>
-                <img src="/public/uploads/<?=$image ?>" alt="">
+                <img src="/public/kandis/<?=$image ?>" alt="<?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?>, Kandidat:in <?= $behorde ?> <?= $gemeinde->gde_name ?>">
                 <div class="kandi-teaser-overlay"></div>
             </div>
             <h5 class="fcdark mt4 mb1"><?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?></h5>
