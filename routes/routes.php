@@ -65,6 +65,8 @@ Router::get('/wahlempfehlung', function() {
     $view->add_style("/lib/select2/select2.min.css");
     $view->add_style("/style/elements/secnav.css");
     $view->add_style("/style/pages/wahlempfehlung.css");
+    $view->add_style("/style/elements/kandigrid.css");
+    $view->add_script("/js/elements/wahlempfehlung.js", false);
     $view->render();
 });
 
@@ -117,4 +119,8 @@ Router::post('/interface/questionaire/1', function() {
 
 Router::post('/interface/questionaire/2/{ID}', function($id) {
     include __DIR__ . "/../interfaces/questionaire/step2.php";
+});
+
+Router::get('/interface/questionaire/kandigrid/{id}/{organ}/{sort}', function($id, $organ, $sort) {
+    include __DIR__ . "/../interfaces/questionaire/kandigrid.php";
 });

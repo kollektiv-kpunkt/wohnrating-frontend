@@ -71,9 +71,9 @@ $(document).on("click", ".kandigrid-filter", function(){
 
     var organ = $(".organ-filter.active").attr("ID")
     var sort = $(".sorting-filter.active").attr("data-sort-key")
-    var gemeinde = $("select.select-gemeinde").find(":selected").val()
+    var id = $("#ajax-container").attr("data-wahlempfehlung-id")
 
-    var url = `/interface/kandigrid/${gemeinde}/${organ}/${sort} #kandigrid`
+    var url = `/interface/questionaire/kandigrid/${id}/${organ}/${sort} #kandigrid`
     $("#ajax-container").load(url);
 })
 

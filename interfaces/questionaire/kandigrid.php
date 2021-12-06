@@ -1,44 +1,4 @@
 <?php
-
-$questions = [
-    [ 
-        "text" => 'Frage 1: Haben Sie der eidgenössischen Initiative «Mehr bezahlbare Wohnungen» (Abstimmung vom 9. Februar 2020), die das Ziel verfolgte, das Angebot an preisgünstigem Wohnraum zu erhöhen, zugestimmt?',
-        "correct" => 1
-    ],
-    [ 
-        "text" => 'Frage 2: Zurzeit sind <a href="https://www.parlament.ch/press-releases/Pages/mm-rk-n-2021-09-06.aspx?lang=1031" target="_blank">vier parlamentarische Initiativen</a> im nationalen Parlament hängig: Sie zielen darauf ab, das Mietrecht zu schwächen, indem die Untermiete limitiert, Mietzinserhöhungen vereinfacht oder der Kündigungsschutz geschwächt werden soll. Unterstützen Sie diese Bestrebungen?',
-        "correct" => 4
-    ],
-    [ 
-        "text" => 'Frage 3: Der gemeinnützige Wohnungsbau orientiert sich an der Kostenmiete und wirtschaftet ohne Gewinnabsichten. Erachten Sie in Ihrer Gemeinde einen höheren Anteil an gemeinnützigen Wohnungen für wünschenswert?',
-        "correct" => 1
-    ],
-    [ 
-        "text" => 'Frage 4: Erachten Sie es als Aufgabe ihrer Gemeinde, dafür zu sorgen, dass Wohnraum für ältere Menschen, Haushalte mit kleinem Budget, vielen Kindern oder Personen in Ausbildung vorhanden ist?',
-        "correct" => 1
-    ],
-    [ 
-        "text" => 'Frage 5: Soll ihre Gemeinde bei Landverkäufen oder der Einrichtung eines Baurechts prinzipiell gemeinnützige Wohnbauträger berücksichtigen?',
-        "correct" => 1
-    ],
-    [ 
-        "text" => 'Frage 6: Würden Sie sich dafür einsetzen, dass in ihrer Gemeinde Zonen für preisgünstiges Wohnen (nach Artikel 49b des Planungs- und Baugesetzes) errichtet werden? Dadurch können ein Mindestanteil an preisgünstigem Wohnraum und höchstzulässige Mietzinse festgesetzt werden.',
-        "correct" => 1
-    ],
-    [ 
-        "text" => 'Frage 7: Wohnbaugenossenschaften bringen einen breiten sozialen und gesellschaftlichen Nutzen, indem sie z.B. auf eine gute Belegung der Wohnungen achten, in ökologische Massnahmen investieren und besonders in den Städten zu einer sozialen Durchmischung beitragen und für lebendige Quartiere sorgen. Können Sie dieser Aussage zustimmen?',
-        "correct" => 1
-    ],
-    [ 
-        "text" => 'Frage 8: Ist es Aufgabe der öffentlichen Hand Anreize zu schaffen, dass Immobilienbesitzer:innen Sanierungen im bewohnten Zustand vornehmen, so dass die Mieter:innen in den Wohnungen bleiben können, oder ein Rückkehrrecht erhalten, nachdem die Wohnungen saniert oder umgebaut wurden?',
-        "correct" => 1
-    ],
-    [ 
-        "text" => 'Frage 9: Braucht es künftig ein «Wohnschutzgesetz», das Mieter:innen vor Leerkündigungen und preistreibenden Renovationen schützt?',
-        "correct" => 1
-    ]
-];
-
 function polarToCartesian($cx, $cy, $radius, $deg) {
     $rad = ($deg - 90) * pi() / 180.0;
     return [
@@ -62,7 +22,93 @@ function describeArc($score){
 
 $api = new API;
 
-if ($organ == "sr" && strpos($gemeinde, "261") !== false) {
+global $empfehlung;
+$empfehlung = $api->get_items("Wahlempfehlung/{$id}", "");
+
+$gemeinde = $api->get_items("Gemeinde/{$empfehlung->gemeinde}");
+
+$questions = [
+    [ 
+        "text" => 'Frage 1: Haben Sie der eidgenössischen Initiative «Mehr bezahlbare Wohnungen» (Abstimmung vom 9. Februar 2020), die das Ziel verfolgte, das Angebot an preisgünstigem Wohnraum zu erhöhen, zugestimmt?',
+        "correct" => $empfehlung->antworten[0]
+    ],
+    [ 
+        "text" => 'Frage 2: Zurzeit sind <a href="https://www.parlament.ch/press-releases/Pages/mm-rk-n-2021-09-06.aspx?lang=1031" target="_blank">vier parlamentarische Initiativen</a> im nationalen Parlament hängig: Sie zielen darauf ab, das Mietrecht zu schwächen, indem die Untermiete limitiert, Mietzinserhöhungen vereinfacht oder der Kündigungsschutz geschwächt werden soll. Unterstützen Sie diese Bestrebungen?',
+        "correct" => $empfehlung->antworten[1]
+    ],
+    [ 
+        "text" => 'Frage 3: Der gemeinnützige Wohnungsbau orientiert sich an der Kostenmiete und wirtschaftet ohne Gewinnabsichten. Erachten Sie in Ihrer Gemeinde einen höheren Anteil an gemeinnützigen Wohnungen für wünschenswert?',
+        "correct" => $empfehlung->antworten[2]
+    ],
+    [ 
+        "text" => 'Frage 4: Erachten Sie es als Aufgabe ihrer Gemeinde, dafür zu sorgen, dass Wohnraum für ältere Menschen, Haushalte mit kleinem Budget, vielen Kindern oder Personen in Ausbildung vorhanden ist?',
+        "correct" => $empfehlung->antworten[3]
+    ],
+    [ 
+        "text" => 'Frage 5: Soll ihre Gemeinde bei Landverkäufen oder der Einrichtung eines Baurechts prinzipiell gemeinnützige Wohnbauträger berücksichtigen?',
+        "correct" => $empfehlung->antworten[4]
+    ],
+    [ 
+        "text" => 'Frage 6: Würden Sie sich dafür einsetzen, dass in ihrer Gemeinde Zonen für preisgünstiges Wohnen (nach Artikel 49b des Planungs- und Baugesetzes) errichtet werden? Dadurch können ein Mindestanteil an preisgünstigem Wohnraum und höchstzulässige Mietzinse festgesetzt werden.',
+        "correct" => $empfehlung->antworten[5]
+    ],
+    [ 
+        "text" => 'Frage 7: Wohnbaugenossenschaften bringen einen breiten sozialen und gesellschaftlichen Nutzen, indem sie z.B. auf eine gute Belegung der Wohnungen achten, in ökologische Massnahmen investieren und besonders in den Städten zu einer sozialen Durchmischung beitragen und für lebendige Quartiere sorgen. Können Sie dieser Aussage zustimmen?',
+        "correct" => $empfehlung->antworten[6]
+    ],
+    [ 
+        "text" => 'Frage 8: Ist es Aufgabe der öffentlichen Hand Anreize zu schaffen, dass Immobilienbesitzer:innen Sanierungen im bewohnten Zustand vornehmen, so dass die Mieter:innen in den Wohnungen bleiben können, oder ein Rückkehrrecht erhalten, nachdem die Wohnungen saniert oder umgebaut wurden?',
+        "correct" => $empfehlung->antworten[7]
+    ],
+    [ 
+        "text" => 'Frage 9: Braucht es künftig ein «Wohnschutzgesetz», das Mieter:innen vor Leerkündigungen und preistreibenden Renovationen schützt?',
+        "correct" => $empfehlung->antworten[8]
+    ]
+];
+
+function calcScore($answers) {
+
+    global $empfehlung;
+    $correctAnswers = $empfehlung->antworten;
+
+    $i = -1;
+    $totalScore = 0;
+    $answered = 0;
+    foreach ($correctAnswers as $correctAnswer) {
+        $i++;
+        if ($answers[$i] == 5) {
+            continue;
+        }
+        $diff = abs($answers[$i] - $correctAnswer);
+		switch ($diff) {
+			case 0:
+				$score = 6;
+				break;
+			case 1:
+				$score = 4;
+				break;
+			case 2:
+				$score = 1;
+				break;
+			case 3:
+				$score = 0;
+				break;
+            case 4:
+                $score = 0;
+				break;
+		}
+        $totalScore = $totalScore + $score;
+        $answered++;
+    }
+
+    $maxScore = count($correctAnswers) * 6;
+
+    $score = round(($totalScore / $maxScore), 2);
+
+    return $score;
+}
+
+if ($organ == "sr" && strpos($gemeinde->gde_nr, "261") !== false) {
     $filter = [
         "gemeinde" => [
             "gde_nr" => [
@@ -80,7 +126,7 @@ if ($organ == "sr" && strpos($gemeinde, "261") !== false) {
     $filter = [
         "gemeinde" => [
             "gde_nr" => [
-                "_eq" => $gemeinde
+                "_eq" => $gemeinde->gde_nr
             ]
         ],
         "behorde" => [
@@ -110,8 +156,6 @@ $params = [
     "filter" => json_encode($filter)
 ];
 
-$gemeinde = $api->get_items("Gemeinde", $params)[0];
-
 switch($organ):
     case "sr":
         $behorde = "Stadtrat/Exekutive";
@@ -136,7 +180,7 @@ endswitch;
 </div>
 <?php
 if (count($politicians) == 0): ?>
-<div id="ajax-container">
+<div id="ajax-container" data-wahlempfehlung-id="<?= $id ?>">
     <div id="kandigrid">
         <i>Leider haben keine Kandidat:innen aus <?= $gemeinde->gde_name ?> an unserem Wohnrating teilgenommen!</i>
     </div>
@@ -145,7 +189,7 @@ if (count($politicians) == 0): ?>
 exit;
 endif;
 ?>
-<div id="ajax-container">
+<div id="ajax-container" data-wahlempfehlung-id="<?= $id ?>">
     <div id="kandigrid" class="mt5">
         <?php
         foreach($politicians as $politician):
@@ -161,7 +205,7 @@ endif;
             
             $partei = $api->get_items("Partei", $params)[0];
     
-            $image = array_values(array_filter(scandir(__DIR__ . "/../public/kandis"), function($file) use($politician) {
+            $image = array_values(array_filter(scandir(__DIR__ . "/../../public/kandis"), function($file) use($politician) {
                 return strpos($file, $politician->hash);
             }));
     
@@ -174,18 +218,20 @@ endif;
             } else {
                 $shareable = false;
             }
+
+            $score = calcScore($politician->antworten);
     
         ?>
-        <div class="kandi" style="--hue: <?= pow($politician->score, 3.5) * 120 ?>" id="<?= $politician->uuid ?>">
+        <div class="kandi" style="--hue: <?= pow($score, 3.5) * 120 ?>" id="<?= $politician->uuid ?>">
             <div class="kandi-teaser">
                 <svg class="percentage-ring" viewBox="0 0 104 104">
-                    <path class="arc" d="<?= describeArc($politician->score) ?>"/>
+                    <path class="arc" d="<?= describeArc($score) ?>"/>
                 </svg>
                 <img src="/public/kandis/<?=$image ?>" alt="<?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?>, Kandidat:in <?= $behorde ?> <?= $gemeinde->gde_name ?>">
                 <div class="kandi-teaser-overlay"></div>
             </div>
             <h5 class="fcdark mt4 mb1"><?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?>, <span style="font-weight: 400;"> <?= $partei->shortname ?></span></h5>
-            <p class="mt0 mb0">Score: <b><?= $politician->score * 100 ?>%</b></p>
+            <p class="mt0 mb0">Score: <b><?= $score * 100 ?>%</b></p>
             <div class="kandi-moreinfo-container mt5 mb5 bgdark fcwhite">
                 <div class="kandi-moreinfo-inner lgcont pt7 pb7">
                     <h1 class="kandi-info-name mb5 fs5"><?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?></h1>
@@ -198,7 +244,7 @@ endif;
                     endif;
                     ?>
                     <div class="kandi-info-rating-details">
-                        <h4 class="mb5"><?= ucfirst($politician->first_name) ?>s Wohnrating: <span style="color: hsl(var(--hue), 100%, 50%)"><?= $politician->score * 100 ?>%</span></h4>
+                        <h4 class="mb5"><?= ucfirst($politician->first_name) ?>s Wohnrating: <span style="color: hsl(var(--hue), 100%, 50%)"><?= $score * 100 ?>%</span></h4>
                         <div class="kandi-info-rating-questions">
                             <?php
                             $i = 0;

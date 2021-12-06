@@ -21,6 +21,8 @@ $(document).on("submit", "#questionaire1", function(e){
         data: data,
         success: ((response)=>{
             localStorage.setItem("questionaireID", response.ID)
+            $(this).css("display", "none");
+            $("#questionaire-container #step2").css("display", "unset");
         })
     })
 })
@@ -43,7 +45,8 @@ $(document).on("submit", "#questionaire2", function(e){
         method: "POST",
         data: formData,
         success: ((response)=>{
-            console.log(response)
+            // $(this).css("display", "none")
+            $("#kandigrid-container").load(`/interface/questionaire/kandigrid/${response.ID}/gr/-score`)
         })
     })
 

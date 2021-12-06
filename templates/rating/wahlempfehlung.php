@@ -28,6 +28,9 @@ $this->add_script("/js/elements/questionaire.js", false);
     </div>
 </div>
 
+<div id="kandigrid-container" class="show lgcont">
+    
+</div>
 
 <?php
 $this->render_part("footer");
