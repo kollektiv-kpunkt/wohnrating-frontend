@@ -45,7 +45,7 @@ $(document).on("submit", "#questionaire2", function(e){
         method: "POST",
         data: formData,
         success: ((response)=>{
-            // $(this).css("display", "none")
+            $(this).css("display", "none")
             $("#kandigrid-container").load(`/interface/questionaire/kandigrid/${response.ID}/gr/-score`)
         })
     })
