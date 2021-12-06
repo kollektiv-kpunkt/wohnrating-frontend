@@ -57,6 +57,17 @@ Router::get('/hintergrund', function() {
     $view->render();
 });
 
+Router::get('/wahlempfehlung', function() {
+    $view = new View(
+        "Ihre Wahlempfehlung",
+        "rating/wahlempfehlung"
+    );
+    $view->add_style("/lib/select2/select2.min.css");
+    $view->add_style("/style/elements/secnav.css");
+    $view->add_style("/style/pages/wahlempfehlung.css");
+    $view->render();
+});
+
 
 Router::get('/shareimg', function() {
     $view = new View(
@@ -97,4 +108,13 @@ Router::error(function(Pecee\Http\Request $request, \Exception $exception) {
 
 Router::get('/interface/kandigrid/{gemeinde}/{organ}/{sort}', function($gemeinde, $organ, $sort) {
     include __DIR__ . "/../interfaces/kandigrid.php";
+});
+
+
+Router::post('/interface/questionaire/1', function() {
+    include __DIR__ . "/../interfaces/questionaire/step1.php";
+});
+
+Router::post('/interface/questionaire/2/{ID}', function($id) {
+    include __DIR__ . "/../interfaces/questionaire/step2.php";
 });

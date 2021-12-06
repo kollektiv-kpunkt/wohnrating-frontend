@@ -77,4 +77,30 @@ class API {
         curl_setopt($this->ch, CURLOPT_POSTFIELDS, $payload );
         return json_decode(curl_exec($this->ch));
     }
+    
+    public function update_item($collection, $payload, $id) {
+        if(!isset($collection)) {
+            die("No collection set");
+        }
+        if(!isset($id)) {
+            die("No item ID set");
+        }
+        if(!isset($payload)) {
+            die("No payload set");
+        }
+
+        if (gettype($payload) == "array") {
+            $payload = json_encode($payload);
+        } else {
+            json_decode($payload);
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                die("Payload malformed");
+            }
+        }
+
+        curl_setopt($this->ch, CURLOPT_CUSTOMREQUEST, 'PATCH');
+        curl_setopt($this->ch, CURLOPT_URL, "{$this->base_url}/items/{$collection}/{$id}");
+        curl_setopt($this->ch, CURLOPT_POSTFIELDS, $payload );
+        return json_decode(curl_exec($this->ch));
+    }
 }

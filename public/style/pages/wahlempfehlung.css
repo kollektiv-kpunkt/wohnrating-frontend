@@ -1,0 +1,167 @@
+.question {
+    margin-top: 3rem;
+    text-align: start;
+    padding: 1.5rem;
+    background-color: white;
+    border: 2px solid var(--black);
+}
+
+.radio-group label {cursor: pointer;}
+
+#questionaire {
+    text-align: end;
+}
+
+.question:nth-of-type(1){margin-top: 2rem;}
+
+.question .question-title {
+    font-size: 1.22222rem;
+}
+
+.question .answers {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.answer {
+    height: 0;
+    width: 0;
+    display: flex;
+}
+
+@media screen and (max-width: 780px) {
+    .question .answers {
+        margin-top: 0.75rem;
+    }
+    .question .answers .radio-group {
+        min-width: calc(50% - 0.5rem);
+        margin-top: 0.75rem;
+    }
+}
+
+.answer+label::before {
+    font-family: "FontAwesome";
+    content: "\f111";
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.answer:checked+label::before {content: "\f058";}
+.answer:checked+label {color: var(--accent);}
+
+/* Step 2 */
+
+#questionaire-container #step1 {
+    display: none;
+}
+
+/* .questionaire-container #step2 {
+    display: none;
+} */
+
+
+form.grid-form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: start;
+}
+
+form.grid-form .form-group {
+    margin-top: 1rem;
+    width: calc(50% - 0.5rem);
+}
+
+@media screen and (max-width: 780px) {
+    form.grid-form .form-group {width: 100%;}
+}
+
+form.grid-form .form-group.fullwidth {
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    font-size: 1.2222rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid var(--black);
+    padding: 0.55rem;
+    border-radius: 0;
+    background-color: var(--white);
+}
+
+.form-group .select2-container {width: 100% !important;}
+
+.form-group .select2-container .select2-selection--single {
+    height: unset;
+    border: 2px solid var(--black);
+    border-radius: 0;
+    background-color: var(--white);
+}
+
+.form-group .select2-container--default .select2-selection--single .select2-selection__rendered {
+    padding: 0.54rem;
+    color: unset;
+    line-height: 1.25;
+    box-sizing: border-box;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 2.3rem;
+}
+
+form.grid-form button[type="submit"] {
+    width: calc(50% - 0.5rem); 
+    margin-left: auto
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.form-group.chk-group {
+    display: flex;
+}
+
+.form-group input[type="checkbox"]+label {
+    display: block;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0;
+    text-transform: none;
+    padding-left: 1.3333rem;
+    text-indent: -0.6666rem;
+    cursor: pointer;
+}
+
+input[type=checkbox] { 
+	display:none;
+} 
+
+
+input[type=checkbox] + label:before {
+	display: inline-flex;
+    font-family: "FontAwesome";
+	content: "\f0c8";
+	cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+input[type=checkbox]:checked + label:before { 
+	content: "\f14a";
+} 

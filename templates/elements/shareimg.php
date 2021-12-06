@@ -67,7 +67,7 @@ if(isset($image[0])) {
         <div id="img-container">
             <div id="img-inner">
                 <div id="testi-img">
-                    <img src="/uploads/<?= $image ?>">
+                    <img src="/kandis/<?= $image ?>">
                     <svg class="percentage-ring" viewBox="0 0 104 104">
                         <path class="arc" d="<?= describeArc($politician->score) ?>"/>
                     </svg>
