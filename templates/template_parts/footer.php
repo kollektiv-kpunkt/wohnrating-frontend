@@ -1,27 +1,27 @@
 <footer class="mt10 bgdark">
     <div id="footer-container" class="pt8 pb8 lgcont">
-        <div class="fcwhite columns3 mb4" id="footer-content">
+        <div class="fcwhite columns3 mb6" id="footer-content">
             <div class="column">
                 <h3 class="mt0">Kontakt</h3>
                 <p><b>Wohnbaugenossenschaften Schweiz Regionalverband Zürich</b><br>
                 Ausstellungsstrasse 114<br>
                 8005 Zürich</p>
                 <p>043 204 06 33</p>
-                <p><a href="mailto:info@wbg-zh.ch" class="fcwhite">info@wbg-zh.ch</a></p>
+                <p><a href="mailto:patrick.tscherrig@wbg-zh.ch" class="fcwhite">patrick.tscherrig@wbg-zh.ch</a></p>
             </div>
             <div class="column">
                 <p class="mt7"><b>Wohnbaugenossenschaften Schweiz Regionalverband Winterthur</b><br>
                 Technikumstrasse 81<br>
                 8400 Winterthur</p>
                 <p>052 242 60 06</p>
-                <p><a href="mailto:info@wbg-zh.ch" class="fcwhite">info@wbg-zh.ch</a></p>
+                <p><a href="mailto:doris.sutter@wbg-winterthur.ch" class="fcwhite">doris.sutter@wbg-winterthur.ch</a></p>
             </div>
             <div class="column">
                 <p class="mt7"><b>Mieterinnen- und Mieterverband Zürich</b><br>
                 Tellstrasse 31, Postfach 1817<br>
                 8021 Zürich</p>
                 <p>044 296 90 20</p>
-                <p><a href="mailto:info@wbg-zh.ch" class="fcwhite">info@wbg-zh.ch</a></p>
+                <p><a href="mailto:e.kunz@mvzh.ch" class="fcwhite">e.kunz@mvzh.ch</a></p>
             </div>
         </div>
         <div class="mb7">

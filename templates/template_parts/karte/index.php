@@ -16,7 +16,7 @@ $this->add_script("/js/elements/karte.js", false);
         <option value="198">Uster</option>
         <option value="293">Wädenswil</option>
         <option value="121">Wetzikon</option>
-        <option value="230">Winerthur</option>
+        <option value="230">Winterthur</option>
         <option value="2610001u2">Zürich Kreise 1 und 2</option>
         <option value="2610003">Zürich Kreis 3</option>
         <option value="2610004u5">Zürich Kreise 4 und 5</option>

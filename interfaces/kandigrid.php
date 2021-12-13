@@ -66,11 +66,11 @@ if ($organ == "sr" && strpos($gemeinde, "261") !== false) {
     $filter = [
         "gemeinde" => [
             "gde_nr" => [
-                "_eq" => 261
+                "_contains" => 261
             ]
         ],
         "behorde" => [
-            "_eq" => $organ
+            "_contains" => $organ
         ],
         "step" => [
             "_eq" => "done"
@@ -84,7 +84,7 @@ if ($organ == "sr" && strpos($gemeinde, "261") !== false) {
             ]
         ],
         "behorde" => [
-            "_eq" => $organ
+            "_contains" => $organ
         ],
         "step" => [
             "_eq" => "done"
@@ -92,6 +92,11 @@ if ($organ == "sr" && strpos($gemeinde, "261") !== false) {
     ];
 }
 
+if (strpos($gemeinde, "261") !== false || $gemeinde == "230" || $gemeinde == "247" || $gemeinde == "243") {
+    $wahldatum = "13. Februar";
+} else {
+    $wahldatum = "27. März";
+}
 
 $params = [
     "filter" => json_encode($filter),
@@ -123,7 +128,8 @@ endswitch;
 
 ?>
 
-<h2 class="fcdark">Kandidat:innen in <?= $gemeinde->gde_name ?></h2>
+<h2 class="fcdark mb2">Kandidat:innen in <?= $gemeinde->gde_name ?></h2>
+<h4 class="mt0 mb6"><span style="font-weight: 400">Wahldatum:</span> <span class="fcdark"><?= $wahldatum ?></span></h4>
 <div id="kandigrid-filters" class="mt4 mb8">
     <div id="sorting-filters">
         <span id="score" data-direction="down" data-sort-key="-score" class="kandigrid-filter sorting-filter active">Score</span>
@@ -138,7 +144,7 @@ endswitch;
 if (count($politicians) == 0): ?>
 <div id="ajax-container">
     <div id="kandigrid">
-        <i>Leider haben keine Kandidat:innen aus <?= $gemeinde->gde_name ?> an unserem Wohnrating teilgenommen!</i>
+        <i>Leider haben bisher noch keine Kandidat:innen aus <?= $gemeinde->gde_name ?> an unserem Wohnrating teilgenommen!</i>
     </div>
 </div>
 <?php
@@ -184,12 +190,12 @@ endif;
                 <img src="/public/kandis/<?=$image ?>" alt="<?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?>, Kandidat:in <?= $behorde ?> <?= $gemeinde->gde_name ?>">
                 <div class="kandi-teaser-overlay"></div>
             </div>
-            <h5 class="fcdark mt4 mb1"><?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?>, <span style="font-weight: 400;"> <?= $partei->shortname ?></span></h5>
+            <h5 class="fcdark mt4 mb1"><?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?>, <span style="font-weight: 400;"> <?= $partei->shortname ?><?php ($politician->bisher) ? print(", bisher") : print(""); ?></span></h5>
             <p class="mt0 mb0">Score: <b><?= $politician->score * 100 ?>%</b></p>
             <div class="kandi-moreinfo-container mt5 mb5 bgdark fcwhite">
                 <div class="kandi-moreinfo-inner lgcont pt7 pb7">
                     <h1 class="kandi-info-name mb5 fs5"><?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?></h1>
-                    <p class="kandi-info-details mt0 mb6<?php ($shareable) ? print " shareable" : print "" ?>"><?= $politician->job ?>, <?= $politician->jahrgang ?>, <?= $partei->shortname ?></p>
+                    <p class="kandi-info-details mt0 mb6<?php ($shareable) ? print " shareable" : print "" ?>"><?= $politician->job ?>, <?= $politician->jahrgang ?>, <?= $partei->shortname ?><?php ($politician->bisher) ? print(", bisher") : print(""); ?></p>
                     <?php
                     if ($politician->statement): 
                     ?>

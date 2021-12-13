@@ -30,83 +30,83 @@ $gemeinde = $api->get_items("Gemeinde/{$empfehlung->gemeinde}");
 $questions = [
     [ 
         "text" => 'Frage 1: Haben Sie der eidgenössischen Initiative «Mehr bezahlbare Wohnungen» (Abstimmung vom 9. Februar 2020), die das Ziel verfolgte, das Angebot an preisgünstigem Wohnraum zu erhöhen, zugestimmt?',
-        "correct" => $empfehlung->antworten[0]
+        "correct" => 1
     ],
     [ 
         "text" => 'Frage 2: Zurzeit sind <a href="https://www.parlament.ch/press-releases/Pages/mm-rk-n-2021-09-06.aspx?lang=1031" target="_blank">vier parlamentarische Initiativen</a> im nationalen Parlament hängig: Sie zielen darauf ab, das Mietrecht zu schwächen, indem die Untermiete limitiert, Mietzinserhöhungen vereinfacht oder der Kündigungsschutz geschwächt werden soll. Unterstützen Sie diese Bestrebungen?',
-        "correct" => $empfehlung->antworten[1]
+        "correct" => 4
     ],
     [ 
         "text" => 'Frage 3: Der gemeinnützige Wohnungsbau orientiert sich an der Kostenmiete und wirtschaftet ohne Gewinnabsichten. Erachten Sie in Ihrer Gemeinde einen höheren Anteil an gemeinnützigen Wohnungen für wünschenswert?',
-        "correct" => $empfehlung->antworten[2]
+        "correct" => 1
     ],
     [ 
         "text" => 'Frage 4: Erachten Sie es als Aufgabe ihrer Gemeinde, dafür zu sorgen, dass Wohnraum für ältere Menschen, Haushalte mit kleinem Budget, vielen Kindern oder Personen in Ausbildung vorhanden ist?',
-        "correct" => $empfehlung->antworten[3]
+        "correct" => 1
     ],
     [ 
         "text" => 'Frage 5: Soll ihre Gemeinde bei Landverkäufen oder der Einrichtung eines Baurechts prinzipiell gemeinnützige Wohnbauträger berücksichtigen?',
-        "correct" => $empfehlung->antworten[4]
+        "correct" => 1
     ],
     [ 
         "text" => 'Frage 6: Würden Sie sich dafür einsetzen, dass in ihrer Gemeinde Zonen für preisgünstiges Wohnen (nach Artikel 49b des Planungs- und Baugesetzes) errichtet werden? Dadurch können ein Mindestanteil an preisgünstigem Wohnraum und höchstzulässige Mietzinse festgesetzt werden.',
-        "correct" => $empfehlung->antworten[5]
+        "correct" => 1
     ],
     [ 
         "text" => 'Frage 7: Wohnbaugenossenschaften bringen einen breiten sozialen und gesellschaftlichen Nutzen, indem sie z.B. auf eine gute Belegung der Wohnungen achten, in ökologische Massnahmen investieren und besonders in den Städten zu einer sozialen Durchmischung beitragen und für lebendige Quartiere sorgen. Können Sie dieser Aussage zustimmen?',
-        "correct" => $empfehlung->antworten[6]
+        "correct" => 1
     ],
     [ 
         "text" => 'Frage 8: Ist es Aufgabe der öffentlichen Hand Anreize zu schaffen, dass Immobilienbesitzer:innen Sanierungen im bewohnten Zustand vornehmen, so dass die Mieter:innen in den Wohnungen bleiben können, oder ein Rückkehrrecht erhalten, nachdem die Wohnungen saniert oder umgebaut wurden?',
-        "correct" => $empfehlung->antworten[7]
+        "correct" => 1
     ],
     [ 
         "text" => 'Frage 9: Braucht es künftig ein «Wohnschutzgesetz», das Mieter:innen vor Leerkündigungen und preistreibenden Renovationen schützt?',
-        "correct" => $empfehlung->antworten[8]
+        "correct" => 1
     ]
 ];
 
-function calcScore($answers) {
+// function calcScore($answers) {
 
-    global $empfehlung;
-    $correctAnswers = $empfehlung->antworten;
+//     global $empfehlung;
+//     $correctAnswers = $empfehlung->antworten;
 
-    $i = -1;
-    $totalScore = 0;
-    $answered = 0;
-    foreach ($correctAnswers as $correctAnswer) {
-        $i++;
-        if ($answers[$i] == 5) {
-            continue;
-        }
-        $diff = abs($answers[$i] - $correctAnswer);
-		switch ($diff) {
-			case 0:
-				$score = 6;
-				break;
-			case 1:
-				$score = 4;
-				break;
-			case 2:
-				$score = 1;
-				break;
-			case 3:
-				$score = 0;
-				break;
-            case 4:
-                $score = 0;
-				break;
-		}
-        $totalScore = $totalScore + $score;
-        $answered++;
-    }
+//     $i = -1;
+//     $totalScore = 0;
+//     $answered = 0;
+//     foreach ($correctAnswers as $correctAnswer) {
+//         $i++;
+//         if ($answers[$i] == 5) {
+//             continue;
+//         }
+//         $diff = abs($answers[$i] - $correctAnswer);
+// 		switch ($diff) {
+// 			case 0:
+// 				$score = 6;
+// 				break;
+// 			case 1:
+// 				$score = 4;
+// 				break;
+// 			case 2:
+// 				$score = 1;
+// 				break;
+// 			case 3:
+// 				$score = 0;
+// 				break;
+//             case 4:
+//                 $score = 0;
+// 				break;
+// 		}
+//         $totalScore = $totalScore + $score;
+//         $answered++;
+//     }
 
-    $maxScore = count($correctAnswers) * 6;
+//     $maxScore = count($correctAnswers) * 6;
 
-    $score = round(($totalScore / $maxScore), 2);
+//     $score = round(($totalScore / $maxScore), 2);
 
-    return $score;
-}
+//     return $score;
+// }
 
 if ($organ == "sr" && strpos($gemeinde->gde_nr, "261") !== false) {
     $filter = [
@@ -165,9 +165,14 @@ switch($organ):
         break;
 endswitch;
 
+$persScore = $empfehlung->score * 100;
+$hue = pow($empfehlung->score, 3.5) * 120;
 ?>
 
-<h2 class="fcdark">Kandidat:innen in <?= $gemeinde->gde_name ?></h2>
+
+<h2 class="fcdark">Ihr Score: <span style="color: hsl(<?= $hue ?>, 100%, 50%)"><?= $persScore ?>%</span></h2>
+
+<p>Die Kandidat:innen aus <?= $gemeinde->gde_name ?> im Vergleich</p>
 <div id="kandigrid-filters" class="mt4 mb8">
     <div id="sorting-filters">
         <span id="score" data-direction="down" data-sort-key="-score" class="kandigrid-filter sorting-filter active">Score</span>
@@ -219,7 +224,7 @@ endif;
                 $shareable = false;
             }
 
-            $score = calcScore($politician->antworten);
+            $score = $politician->score;
     
         ?>
         <div class="kandi" style="--hue: <?= pow($score, 3.5) * 120 ?>" id="<?= $politician->uuid ?>">
