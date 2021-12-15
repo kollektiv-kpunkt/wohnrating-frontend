@@ -187,7 +187,7 @@ endif;
                 <svg class="percentage-ring" viewBox="0 0 104 104">
                     <path class="arc" d="<?= describeArc($politician->score) ?>"/>
                 </svg>
-                <img src="/public/kandis/<?=$image ?>" alt="<?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?>, Kandidat:in <?= $behorde ?> <?= $gemeinde->gde_name ?>">
+                <img src="/public/kandis/<?= $image ?>" alt="<?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?>, Kandidat:in <?= $behorde ?> <?= $gemeinde->gde_name ?>">
                 <div class="kandi-teaser-overlay"></div>
             </div>
             <h5 class="fcdark mt4 mb1"><?= ucfirst($politician->first_name) ?> <?= ucfirst($politician->last_name) ?>, <span style="font-weight: 400;"> <?= $partei->shortname ?><?php ($politician->bisher) ? print(", bisher") : print(""); ?></span></h5>
