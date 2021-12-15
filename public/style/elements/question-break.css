@@ -1,3 +1,6 @@
 .question-inner {
-    text-align: center;
+    line-height: 1.1;
+}
+.question-inner p.fs3 {
+    font-style: italic;
 }

@@ -57,7 +57,7 @@ Router::get('/hintergrund', function() {
     $view->render();
 });
 
-Router::get('/wahlempfehlung', function() {
+Router::get('/ihr-score', function() {
     $view = new View(
         "Ihre Wahlempfehlung",
         "rating/wahlempfehlung"

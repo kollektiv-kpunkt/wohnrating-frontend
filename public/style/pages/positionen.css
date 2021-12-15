@@ -1,0 +1,10 @@
+.answercontainer {
+    max-width: 17cm;
+    margin-top: 3rem;
+}
+
+@media screen and (max-width: 980px) {
+    .mt10.mb6.pt7 {
+        padding-top: 0;
+    }
+}

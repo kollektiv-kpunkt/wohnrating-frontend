@@ -20,6 +20,9 @@ $(document).on("submit", "#questionaire1", function(e){
         method: "POST",
         data: data,
         success: ((response)=>{
+            $('html, body').animate({
+                scrollTop: $('#questionaire-container').offset().top
+            });
             localStorage.setItem("questionaireID", response.ID)
             $(this).css("display", "none");
             $("#questionaire-container #step2").css("display", "unset");

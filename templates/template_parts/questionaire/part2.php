@@ -44,7 +44,7 @@ $this->add_script("/lib/select2/select2.min.js", false);
     </div>
     <div class="form-group fullwidth chk-group">
         <input type="checkbox" name="optin" id="optin">
-        <label for="optin" class="text_small">Ich möchte gerne mehr Informationen von den Wohnbaugenossenschaften und dem Mieter:innenverband erhalten</label>
+        <label for="optin" class="text_small">Ich möchte gerne mehr Informationen von den Wohnbaugenossenschaften und dem Mieterinnen- und Mieterverband erhalten</label>
     </div>
     <button type="submit" class="button mt6">Weiter</button>
 </form>

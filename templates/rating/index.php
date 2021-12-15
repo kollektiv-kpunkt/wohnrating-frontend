@@ -32,27 +32,42 @@ $this->render_part("cta");
 
 <div class="mt9" id="ueber-uns">
     <div id="ueber-uns-inner" class="lgcont">
-        <h2 class="fcdark">Über die Wohnbaugenossenschaft WBG</h2>
-        <div class="columns3">
+        <h2 class="fcdark">Über den Mieter:innenverband MV</h2>
+        <div class="columns3 mt5">
             <div class="column">
-                <p class="mt0">Lacus volutpat nulla ac scelerisque aliquam dictum. Vestibulum ut quam auctor non nam. Enim integer varius mattis purus phasellus tristique in feugiat nunc. Vitae fermentum id aliquam ipsum tellus. A ac nullam elit senectus fames. Habitant eget congue quis at lacinia libero. Consectetur sit tempor nibh pulvinar sit ipsum fringilla sit. Curabitur sed nunc nullam metus eu.</p>
-                <p>Vel feugiat elit, neque commodo lectus placerat dapibus viverra. Sed lectus est elementum morbi rutrum scelerisque neque ut. <strong>Vitae aliquet diam, ac, dolor vestibulum, mi sed vestibulum enim.</strong> Viverra tellus lorem molestie eu risus gravida accumsan. At lectus non semper dolor.</p>
+                <p class="mt0"><b>Der MV Zürich macht sich stark für alle Mieter:innen. Er bietet kompetente Unterstützung bei allen rechtlichen Problemen setzt sich für ein starkes Mietrecht und einen wirksamen Wohnschutz ein.</b></p>
+                <h4>Kompetente Unterstützung</h4>
+                <p>Unsere Rechtsberater: innen helfen Ihnen bei allen Fragen rund ums Mietrecht. Haben Sie eine Kündigung bekommen oder funktioniert ihre Heizung nicht richtig? Per Mail, Telefon oder in einem persönlichen Gespräch vor Ort bekommen Sie Unterstützung. Für Wohnungsübergaben oder Mängelberatungen kommen unsere Fachpersonen auch zu Ihnen nach Hause.</p>
             </div>
             <div class="column">
-                <p class="mt0">Lacus volutpat nulla ac scelerisque aliquam dictum. Sestibulum ut quam auctor non nam. Enim integer varius mattis purus phasellus tristique in feugiat nunc. Vitae fermentum id aliquam ipsum tellus. Selenium</p>
-                <p><strong>A ac nullam elit senectus fames. Habitant eget congue quis at lacinia libero. Consectetur sit tempor nibh pulvinar sit ipsum fringilla sit. Curabitur sed nunc nullam metus eu.</strong></p>
+                <h4>Starke Lobby</h4>
+                <p>Mit seinen über 50'000 Mitgliedern setzt sich der MV Zürich für einen wirksamen Mieterinnen- und Mieterschutz ein. Er fordert faire Mieten, einen wirksamen Kündigungsschutz und mehr bezahlbaren Wohnraum.</p>
             </div>
             <div class="column placeholder"></div>
         </div>
-        <h2 class="mt6 fcdark">Über den Mieter:innenverband MV</h2>
-        <div class="columns3">
+        <h2 class="mt8 fcdark">Über die Wohnbaugenossenschaft WBG</h2>
+        <div class="columns3 mt5">
             <div class="column">
-                <p class="mt0">Lacus volutpat nulla ac scelerisque aliquam dictum. Vestibulum ut quam auctor non nam. Enim integer varius mattis purus phasellus tristique in feugiat nunc. Vitae fermentum id aliquam ipsum tellus. A ac nullam elit senectus fames. Habitant eget congue quis at lacinia libero. Consectetur sit tempor nibh pulvinar sit ipsum fringilla sit. Curabitur sed nunc nullam metus eu.</p>
-                <p>Vel feugiat elit, neque commodo lectus placerat dapibus viverra. Sed lectus est elementum morbi rutrum scelerisque neque ut. <strong>Vitae aliquet diam, ac, dolor vestibulum, mi sed vestibulum enim.</strong> Viverra tellus lorem molestie eu risus gravida accumsan. At lectus non semper dolor.</p>
+                <p class="mt0">Wohnbaugenossenschaften Zürich vertritt 260 Genossenschaften, Stiftungen und gemeinnützige Aktiengesellschaften. Sie besitzen rund 69'000 Wohnungen und Gewerberäumen und engagieren sich für langfristig günstigen Wohnraum und für umfassende Nachhaltigkeit.</p>
+                <p>Die Wohnungen unserer Mitglieder sind dank Kostenmiete rund 25 % günstiger als nicht-gemeinnützige Wohnungen. Unsere Mitglieder setzen aber auch beim Bauen architektonische Massstäbe, achten auf sozial verträgliche Verdichtung der Quartiere und ergänzen diese durch Krippen, Gewerbe- und Gemeinschaftsräume und -plätze. </p>
             </div>
             <div class="column">
-                <p class="mt0">Lacus volutpat nulla ac scelerisque aliquam dictum. Sestibulum ut quam auctor non nam. Enim integer varius mattis purus phasellus tristique in feugiat nunc. Vitae fermentum id aliquam ipsum tellus. Selenium</p>
-                <p><strong>A ac nullam elit senectus fames. Habitant eget congue quis at lacinia libero. Consectetur sit tempor nibh pulvinar sit ipsum fringilla sit. Curabitur sed nunc nullam metus eu.</strong></p>
+                <p class="mt0">Der Regionalverband Zürich unterstützt seine Mitglieder mit einer Reihe von Veranstaltungen, sammelt und erarbeitet Branchen-Know-how und bietet Dienstleistungen wie der Vermittlung von Land, Liegenschaften und Kontakten. Darüber hinaus vertritt Wohnbaugenossenschaften Zürich die Anliegen seiner Mitglieder in der Öffentlichkeit und auf politischer Ebene.</p>
+            </div>
+            <div class="column placeholder"></div>
+        </div>
+        <h2 class="mt8 fcdark">Auswertung Wohnrating</h2>
+        <div class="columns3 mt5">
+            <div class="column">
+                <p class="mt0">Bei allen 9 Fragen konnte mit den Antwortmöglichkeiten Ja, eher Ja, eher Nein und Nein geantwortet werden. Die Positionen von WBG Winterthur und Zürich und des MV Zürich finden Sie <a href="/hintergrund">hier.</a></p>
+                <h4>Berechnungsgrundlage:</h4>
+                <p>Für übereinstimmende Antworten wurden 6 Punkte vergeben.<br>
+                Für eher Ja resp. eher Nein, wenn unsere Position gleichlautete, wurden 4 Punkte vergeben.<br>
+                Für eher Ja resp. eher Nein, wenn unsere Position konträr war, wurde 1 Punkt vergeben.</p>
+                <p>100% Übereinstimmung gab es für 54 Punkte.</br>
+                0% Übereinstimmung bei 0 Punkten.</p>
+            </div>
+            <div class="column placeholder">
             </div>
             <div class="column placeholder"></div>
         </div>
