@@ -39,6 +39,7 @@
     <script src="/lib/jquery.min.js"></script>
 
     <?php
+    $this->add_style("/lib/glowCookies/glowCookies.min.css");
     $this->render_head();
     ?>
 

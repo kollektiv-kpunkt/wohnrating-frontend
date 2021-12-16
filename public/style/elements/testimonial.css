@@ -111,3 +111,7 @@ b#score  {
     top: -20px;
     left: -20px;
 }
+
+#glowCookies-banner {
+    display: none;
+}
