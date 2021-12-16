@@ -2,7 +2,7 @@
 $this->content = array(
     "intro" => [
         "title" => "Wohnrating",
-        "lead" => "Wir haben die Kandidat:innen für die Kommunalwahlen nach ihren Meinungen zum Thema Wohn- und Bodenpolitik gefragt. Hier findest du die Ergebnisse."
+        "lead" => "Wir haben die Kandidat:innen für die Kommunalwahlen nach ihren Meinungen zum Thema Wohn- und Bodenpolitik gefragt. Hier finden Sie die Ergebnisse."
     ]
 );
 $this->render_part("heroine");

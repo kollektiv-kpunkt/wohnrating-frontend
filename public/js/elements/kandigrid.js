@@ -79,5 +79,5 @@ $(document).on("click", ".kandigrid-filter", function(){
 
 
 $(document).on("click", ".kandi-info-details.shareable", function(){
-    window.open("https://imggen.victorinus.ch/pn44/testimonial?url=https://dev.wohnrating.ch/shareimg?uuid=" + $(this).parents().eq(2).attr("ID"));
+    window.open("https://imggen.victorinus.ch/pn44/testimonial?url=https://wohnrating.ch/shareimg?uuid=" + $(this).parents().eq(2).attr("ID"));
 })

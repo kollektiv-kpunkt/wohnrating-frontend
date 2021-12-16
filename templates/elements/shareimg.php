@@ -52,6 +52,8 @@ $image = array_values(array_filter(scandir(__DIR__ . "/../../public/kandis"), fu
 
 if(isset($image[0])) {
     $image = $image[0];
+} else {
+    $image = "placeholder.png";
 }
 
 ?>

@@ -173,6 +173,8 @@ endif;
     
             if(isset($image[0])) {
                 $image = $image[0];
+            } else {
+                $image = "placeholder.png";
             }
 
             if ($politician->statement !== "") {
